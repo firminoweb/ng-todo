@@ -1,0 +1,5 @@
+//-- Contextual backgrounds --//
+
+.bg-inverse {
+	background-image: linear-gradient(135deg, darken($gray-dark, 10%), $gray-dark, lighten($gray-dark, 10%));
+}

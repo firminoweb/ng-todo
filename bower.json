@@ -1,0 +1,29 @@
+{
+  "name": "ToDo",
+  "authors": [
+    "João Firmino <firminoata@gmail.com>"
+  ],
+  "description": "Angular ToDo Teste",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "Bootstrap",
+    "Bootstrap4",
+    "sass",
+    "template",
+    "theme",
+    "CSS",
+    "retina",
+    "offcanvas",
+    "animations"
+  ],
+  "license": "MIT",
+  "homepage": "http://firmino.us",
+  "devDependencies": {
+    "bootstrap": "4.0",
+    "font-awesome": "fontawesome#^4.6.3",
+    "scrollreveal": "^3.2.0",
+    "angular": "1.5.8",
+    "angular-route": "1.5.8"
+  }
+}

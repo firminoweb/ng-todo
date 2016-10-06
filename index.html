@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Angular ToDo Test</title>
+
+    <meta name="description" content="">
+
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" href="">
+
+	<link href="https://fonts.googleapis.com/css?family=Exo|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/dist/css/app.bundle.css">
+
+</head>
+<body class="bg-inverse invisible">
+
+	<header id="myHeader" class="navbar navbar-fixed-top navbar-dark">
+		<div class="container">
+		  <div class="clearfix">
+
+		  	<a class="navbar-brand" href="#home">NG-ToDo</a>
+			<div class="pull-xs-right" role="group">
+		  		<a href="https://www.facebook.com/firminous/" class="btn btn-sm btn-link text-light" target="_blank"><i class="fa fa-facebook"></i></a>
+		  		<a href="https://twitter.com/firminoweb" class="btn btn-sm btn-link text-light" target="blank"><i class="fa fa-twitter"></i></a>
+		  		<a href="https://br.linkedin.com/in/firminoweb" class="btn btn-sm btn-link text-light" target="_blank"><i class="fa fa-linkedin"></i></a>
+		  		<a href="https://github.com/firminoweb" class="btn btn-sm btn-link text-light" target="_blank"><i class="fa fa-github"></i></a>
+			</div>
+
+		  </div>
+		</div>
+	</header>
+
+	<main id="fullpage" class="site-wrapper">
+
+		<div class="cover-bg home"></div>
+
+    	<div class="site-wrapper-inner" ng-controller="TodoCtrl">
+			<div class="container">
+
+				<div class="row">
+			        <div id="myDesc" class="col-xs-12 col-md-8 offset-md-2 text-xs-center">
+
+						<div class="m-b-2">
+				        	<p class="text-opac lead">Digite no campo abaixo a sua tarefa, em seguida pressione ENTER.</p>
+
+							<form class="input-group" id="todo-form" ng-submit="addTodo()">
+						      <input type="text" class="form-control form-control-lg form-control-opac input-outer" autofocus="" ng-model="newTodo" placeholder="Tarefa...">
+						    </form>
+						    
+					    </div>
+
+					    <div class="card card-inverse card-inverse-sweet" ng-show="todos.length">
+
+					    	<div class="card-header bg-inverse text-xs-center">
+								<span class="input-group-btn">
+									<a href="#/" ng-click="sortReverse = false" class="btn btn-sm btn-opac btn-slash">
+										<span>Crescente<span>
+									</a>
+
+									<a href="#/" ng-click="sortReverse = true" class="btn btn-sm btn-opac btn-slash">
+										<span>Decrescente<span>
+									</a>
+
+								</span>
+							</div>
+
+							<div class="card-block">
+
+								<div class="input-group m-b-1" ng-repeat="todo in todos | filter:statusFilter | orderBy:sortType:sortReverse" ng-class="{completed: todo.completed, editing: todo === editedTodo}">
+							      <span class="input-group-addon bg-light">
+							        <strong>{{todo.id}}</strong>
+							      </span>
+
+							      <input type="text" class="form-control form-control-opac input-outer" aria-label="Text input with checkbox" ng-trim="false" ng-model="todo.title" ng-blur="doneEditing(todo)" todo-escape="revertEditing(todo)" todo-focus="todo === editedTodo">
+
+							      <span class="input-group-addon bg-inverse">
+							        <input type="checkbox" aria-label="Checkbox for following text input" ng-model="todo.completed" ng-click="todoCompleted(todo)">
+							      </span>
+							      <button class="btn btn-danger" type="button" ng-click="removeTodo(todo)"><i class="fa fa-close"></i></button>
+							    </div>
+
+							</div>
+							<div class="card-footer bg-inverse text-xs-center">
+								<span class="input-group-btn">
+									<a ng-class="{selected: location.path() === '/'} " href="#/" class="btn btn-opac btn-slash">
+										<span class="font-weight-bold">Todos<span>
+									</a>
+									<a ng-class="{selected: location.path() == '/active'} " href="#/active" class="btn btn-opac btn-slash">
+										<span>Ativos<span>
+									</a>
+									<a ng-class="{selected: location.path() === '/completed'}" href="#/completed" class="btn btn-opac btn-slash">
+										<span>Completos<span>
+									</a>
+								</span>
+							</div>
+
+					    </div>
+
+			        </div>
+		      	</div>
+
+			</div>
+		</div>
+
+
+	</main>
+
+	<footer class="footer text-xs-center fromBottom" id="myFooter">
+		<small class="text-opac">©2016 <a href="http://firmino.us" title="João Firmino" class="text-light">João Firmino</a></small>
+	</footer>
+
+	<script src="assets/dist/js/app.bundle.js"></script>
+
+</body>
+</html>

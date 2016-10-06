@@ -1,0 +1,98 @@
+//-- Custom --//
+html{
+  height: 100%;
+  body {
+    height: 100%;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: 'Exo', sans-serif;
+}
+
+//Text
+.text-opac {
+	opacity: .75;
+}
+
+@include text-emphasis-variant('.text-light', #fff);
+
+
+//Main
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+.cover-bg {
+    background: 50% no-repeat;
+    background-size: cover;
+    opacity: .5;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    &.home {
+      background-image: url('../../images/albatross.jpg');
+    }
+}
+
+.d-table {
+	display: table;
+}
+
+//Footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgba(0,0,0,.1);
+  z-index: 1001;
+}
+
+/////
+/////
+
+@include media-breakpoint-down(sm) {
+
+  .display-3,
+  .display-4,
+  .h1,
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+  }
+
+  .section .card {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+}
+
+
+@include media-breakpoint-down(xs) {
+
+}
