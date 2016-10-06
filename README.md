@@ -39,7 +39,7 @@ Quando fizer qualquer alteração ou upgrade antes de executar o `$ npm run dev`
 
 ## Demo
 
-* ### [Clique Aqui para visualizar](https://firminoweb.github.com/ngtodo)
+* ### [Clique Aqui para visualizar](https://firminoweb.github.io/ng-todo)
 
 ## Copyright & Licença
 Copyright (c)2016 João Firmino(https://twitter.com/firminoweb) - [MIT license].
